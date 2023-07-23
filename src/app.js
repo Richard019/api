@@ -8,6 +8,8 @@ import alunoRoutes from './routes/alunoRoutes';
 import tokenRoutes from './routes/tokenRoutes';
 import userRoutes from './routes/userRoutes';
 import photoRoutes from './routes/photoRoutes';
+import homeRoutes from './routes/homeRoutes';
+
 import loginRequired from './middlewares/loginRequired';
 import './database';
 
@@ -25,7 +27,7 @@ class App {
   }
 
   routes() {
-    this.app.use('/', (req, res) => res.send('Api Index'));
+    this.app.use('/', homeRoutes);
     this.app.use('/alunos', alunoRoutes);
     this.app.use('/tokens', tokenRoutes);
     this.app.use('/users', loginRequired, userRoutes);
