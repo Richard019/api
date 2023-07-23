@@ -25,7 +25,8 @@ class App {
   }
 
   routes() {
-    this.app.use('/', alunoRoutes);
+    this.app.use('/', (req, res) => res.send('Api Index'));
+    this.app.use('/alunos', alunoRoutes);
     this.app.use('/tokens', tokenRoutes);
     this.app.use('/users', loginRequired, userRoutes);
     this.app.use('/photos', loginRequired, photoRoutes);
