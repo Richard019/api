@@ -11,6 +11,7 @@
       altura: _sequelize2.default.FLOAT,
     }, {
       sequelize,
+      tableName: 'alunos',
     });
     return this;
   }

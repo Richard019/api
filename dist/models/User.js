@@ -42,6 +42,7 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
       },
     }, {
       sequelize,
+      tableName: 'users',
     });
 
     this.addHook('beforeSave', async (user) => {

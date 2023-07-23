@@ -14,7 +14,7 @@ exports. default = {
     },
     filename(req, file, cb) {
       const uniqueSuffix = `${Date.now()}_${Math.round(Math.random() * 1E9)}`;
-      cb(null, `${uniqueSuffix}.${_path.extname.call(void 0, file.originalname)}`);
+      cb(null, `${uniqueSuffix}${_path.extname.call(void 0, file.originalname)}`);
     },
   }),
 };
