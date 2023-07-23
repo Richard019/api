@@ -25,7 +25,8 @@ class App {
   }
 
   routes() {
-    this.app.use('/', _alunoRoutes2.default);
+    this.app.use('/', (req, res) => res.send('Api Index'));
+    this.app.use('/alunos', _alunoRoutes2.default);
     this.app.use('/tokens', _tokenRoutes2.default);
     this.app.use('/users', _loginRequired2.default, _userRoutes2.default);
     this.app.use('/photos', _loginRequired2.default, _photoRoutes2.default);
