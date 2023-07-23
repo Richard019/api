@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 const router = new Router();
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send('<h1>Api Index</h1>');
 });
 
