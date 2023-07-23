@@ -8,6 +8,8 @@ var _alunoRoutes = require('./routes/alunoRoutes'); var _alunoRoutes2 = _interop
 var _tokenRoutes = require('./routes/tokenRoutes'); var _tokenRoutes2 = _interopRequireDefault(_tokenRoutes);
 var _userRoutes = require('./routes/userRoutes'); var _userRoutes2 = _interopRequireDefault(_userRoutes);
 var _photoRoutes = require('./routes/photoRoutes'); var _photoRoutes2 = _interopRequireDefault(_photoRoutes);
+var _homeRoutes = require('./routes/homeRoutes'); var _homeRoutes2 = _interopRequireDefault(_homeRoutes);
+
 var _loginRequired = require('./middlewares/loginRequired'); var _loginRequired2 = _interopRequireDefault(_loginRequired);
 require('./database');
 
@@ -25,7 +27,7 @@ class App {
   }
 
   routes() {
-    this.app.use('/', (req, res) => res.send('Api Index'));
+    this.app.use('/', _homeRoutes2.default);
     this.app.use('/alunos', _alunoRoutes2.default);
     this.app.use('/tokens', _tokenRoutes2.default);
     this.app.use('/users', _loginRequired2.default, _userRoutes2.default);
